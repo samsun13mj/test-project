@@ -22,7 +22,8 @@ import { NgIf } from '@angular/common';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    NgIf
   ]
 })
 export class SettingsComponent implements OnInit {
