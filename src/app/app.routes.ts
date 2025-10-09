@@ -39,12 +39,11 @@ export const routes: Routes = [
           ),
       },
 
-      // ✅ FIXED: Correct User Details path
       {
         path: 'user-details/:id',
         loadComponent: () =>
           import('./view/user-details-container/user-details/user-details').then(
-            (m) => m.UserDetailsSidenavComponent // ✅ Must match actual exported class name
+            (m) => m.UserDetailsSidenavComponent 
           ),
       },
     ],

@@ -1,6 +1,7 @@
 .table-card {
   padding: 16px;
   border-radius: 6px;
+  background-color: rgb(255, 255, 255);
 }
 
 .table-header {
@@ -24,4 +25,6 @@
   justify-content: center;
   align-items: center;
   height: 120px;
+  position: relative;
+  size: 20px;
 }

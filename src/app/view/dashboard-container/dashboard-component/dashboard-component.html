@@ -39,8 +39,7 @@
         mat-row
         *matRowDef="let row; columns: displayedColumns"
         (click)="openUserDetails(row)"
-        class="user-row"
-      ></tr>
+        class="user-row"></tr>
     </table>
 
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

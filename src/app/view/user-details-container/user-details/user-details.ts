@@ -13,8 +13,6 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class UserDetailsSidenavComponent {
   @Input() user: any = null;
-
-  // For display safety
   get displayName() {
     if (!this.user) return 'Unknown';
     return this.user.name || this.user.fullName || this.user.username || this.user.email || 'User';

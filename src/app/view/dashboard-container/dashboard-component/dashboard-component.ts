@@ -58,7 +58,6 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   openUserDetails(user: any): void {
-    // ✅ Corrected method name
     this.sidenavService.openWithUser(user);
   }
 }

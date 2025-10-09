@@ -10,7 +10,6 @@ export interface SidenavPayload {
   providedIn: 'root'
 })
 export class SidenavService {
-  // Holds the current payload: whether to open the right-side sidenav and which user to show
   private _payload$ = new BehaviorSubject<SidenavPayload>({ open: false });
 
   get payload$(): Observable<SidenavPayload> {

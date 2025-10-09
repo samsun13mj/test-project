@@ -7,12 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { NgIf } from '@angular/common';
-
-// ✅ Import Toolbar and Sidebar Components (add these)
 import { ToolbarComponent } from '../../../shared-container/toolbar/toolbar';
 import { SidebarComponent } from '../../../shared-container/sidebar/sidebar';
-
-// ✅ Existing imports
 import { SidenavService } from '../../../../service/sidenav-service';
 import { UserDetailsSidenavComponent } from '../../../user-details-container/user-details/user-details';
 
@@ -26,10 +22,10 @@ import { UserDetailsSidenavComponent } from '../../../user-details-container/use
     MatIconModule,
     MatButtonModule,
     RouterModule,
-    ToolbarComponent,          // ✅ Added
-    SidebarComponent,          // ✅ Added
+    ToolbarComponent,          
+    SidebarComponent,          
     UserDetailsSidenavComponent,
-    NgIf                       // ✅ Added
+    NgIf                       
   ],
   templateUrl: './main-layout.html',
   styleUrls: ['./main-layout.scss']
