@@ -1,7 +1,21 @@
 <mat-card class="table-card">
   <div class="table-header">
     <h2>Dashboard</h2>
-    <button mat-stroked-button color="primary" routerLink="/reports">Reports</button>
+
+    <div class="header-actions">
+      
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Search by name</mat-label>
+        <input
+          matInput
+          type="text"
+          (keyup)="applyFilter($event)"
+          placeholder="Type to search..."
+        />
+      </mat-form-field>
+
+      <button mat-stroked-button color="primary" routerLink="/reports">Reports</button>
+    </div>
   </div>
 
   <div *ngIf="loading" class="loading-container">
@@ -39,9 +53,14 @@
         mat-row
         *matRowDef="let row; columns: displayedColumns"
         (click)="openUserDetails(row)"
-        class="user-row"></tr>
-    </table>  
+        class="user-row"
+      ></tr>
+    </table>
 
-    <mat-paginator class="pageselect" [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+    <mat-paginator
+      class="pageselect"
+      [pageSizeOptions]="[10, 20]"
+      showFirstLastButtons>
+    </mat-paginator>
   </div>
 </mat-card>

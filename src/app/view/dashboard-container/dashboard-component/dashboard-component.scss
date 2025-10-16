@@ -1,24 +1,45 @@
 .table-card {
   padding: 16px;
   border-radius: 6px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
 }
 
 .table-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-field {
+  width: 380px;
+  height: 10px;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+.search-field input {
+  height: 12px;
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
 
 .user-table {
   width: 100%;
   margin-top: 16px;
   cursor: pointer;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
 }
 
 .user-row:hover {
-  background: #f6f8ff;
+  background: #e3f2fd;
 }
 
 .loading-container {
@@ -27,7 +48,6 @@
   align-items: center;
   height: 120px;
   position: relative;
-  size: 20px;
   color: blue;
 }
 

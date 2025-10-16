@@ -5,6 +5,8 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../../../service/user-service';
@@ -22,6 +24,8 @@ import { SidenavService } from '../../../service/sidenav-service';
     MatTableModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule
   ],
   templateUrl: './dashboard-component.html',
@@ -52,16 +56,20 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this.userService.getUsers().subscribe({
       next: (users) => {
         this.dataSource.data = users;
-        setTimeout(() => {
-          this.dataSource.paginator = this.paginator;
-        });
-
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.filterPredicate = (data, filter) =>
+          data.name.toLowerCase().includes(filter);
         this.loading = false;
       },
       error: () => {
         this.loading = false;
       }
     });
+  }
+
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 
   openUserDetails(user: any): void {
